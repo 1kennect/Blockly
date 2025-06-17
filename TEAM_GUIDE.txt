@@ -1,0 +1,101 @@
+#Accessibility Platform - Team Guide
+
+## 1. Project Structure
+
+```
+Blockly/
+├── backend/           # Flask API, Python, SQLite
+│   ├── app.py
+│   ├── requirements.txt
+│   └── ... 
+├── frontend/          # React, Blockly, accessibility features
+│   ├── src/
+│   │   ├── assets/        # Images, fonts, static files
+│   │   ├── components/    # Reusable React components (e.g., BlocklyWorkspace, NavBar)
+│   │   ├── pages/         # Top-level pages/views (e.g., Home)
+│   │   ├── services/      # API calls, data fetching, LLM integration
+│   │   ├── styles/        # Global and shared CSS
+│   │   ├── App.js         # Main React app
+│   │   ├── index.js       # Entry point
+│   │   └── ...
+│   ├── package.json
+│   └── ...
+├── README.md
+└── TEAM_GUIDE.txt      # This file
+```
+
+---
+
+## 2. Setup Instructions
+
+### Frontend (React)
+1. Navigate to the frontend folder:
+   ```bash
+   cd frontend
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+   The app will be available at http://localhost:3000
+
+### Backend (Flask)
+1. Navigate to the backend folder:
+   ```bash
+   cd backend
+   ```
+2. Create and activate a virtual environment:
+   ```bash
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+3. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+4. Start the Flask server:
+   ```bash
+   python app.py
+   ```
+   The API will be available at http://localhost:5000
+
+---
+
+## 3. Development Workflow
+
+- **Components:** Add reusable UI parts to `src/components/`.
+- **Pages:** Add new screens/views to `src/pages/` and route them in `App.js`.
+- **Services:** Place API/LLM logic in `src/services/`.
+- **Assets:** Store images, fonts, etc. in `src/assets/`.
+- **Styles:** Add or update CSS in `src/styles/`.
+- **Testing:** Add tests in the relevant folders and use `setupTests.js` for configuration.
+
+---
+
+## 4. Key Files & Examples
+
+- `components/BlocklyWorkspace.js`: The Blockly coding editor.
+- `components/NavBar.js`: Navigation bar for switching pages.
+- `pages/Home.js`: Example home page.
+- `services/api.js`: Example API call to the backend.
+- `App.js`: Main app, sets up routing and layout.
+
+---
+
+## 5. Accessibility & LLM Integration
+- **Accessibility:** Follow best practices (ARIA, color contrast, keyboard navigation) when building UI.
+- **LLM Integration:** Add backend or service logic in `services/` or `backend/` as needed.
+
+---
+
+## 6. Contributing
+- Use clear, descriptive commit messages.
+- Keep code modular and organized.
+- Test your changes before pushing.
+- Ask questions and document new features for the team.
+
+---
